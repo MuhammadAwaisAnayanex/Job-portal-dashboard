@@ -4,30 +4,24 @@ import siteLogo from "../../assets/site-logo.jpg"
 const Header = () => {
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center flex-wrap ">
         {/* Logo */}
         <div className="flex items-center">
           <Link to={"/"}><img src={siteLogo} alt="JobPortal Logo" className="h-15"/></Link>
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className=" md:flex space-x-8">
           <Link to={"/"} className="text-gray-700 hover:text-blue-500">
-            Home
+            Dashboard
           </Link>
-          <a href="/jobs" className="text-gray-700 hover:text-blue-500">
-            Jobs
-          </a>
-          <a href="/post-job" className="text-gray-700 hover:text-blue-500">
+          <Link to={"/post-job"} className="text-gray-700 hover:text-blue-500">
             Post a Job
-          </a>
-          <a href="/contact" className="text-gray-700 hover:text-blue-500">
-            Contact
-          </a>
+          </Link>
         </nav>
 
         {/* User Profile Dropdown */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ">
           <Link to={"/login"} className="text-gray-700 hover:text-blue-500">Login</Link>
           <Link to={"/signUp"} className="text-gray-700 hover:text-blue-500">
             Sign Up

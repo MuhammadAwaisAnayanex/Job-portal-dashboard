@@ -1,12 +1,13 @@
 import React from 'react'
+import Dashboard from '../dashboard/Dashboard'
 
 const Home = () => {
   return (
     <>
-    <section className='mt-10'>
-        <div className="container">
-            <h1 className='text-center'>Wellcome to Dashboard</h1>
-            <h1 className='text-center'>Job Portal Dashbord App</h1>
+    <section className='mt-5'>
+        <div className="container mx-auto">
+            <h1 className='text-center font-bold text-2xl '>Wellcome to Dashboard</h1>
+            <Dashboard/>
         </div>
     </section>
     </>

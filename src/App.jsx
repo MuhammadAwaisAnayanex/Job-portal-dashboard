@@ -6,7 +6,9 @@ function App() {
 
   return (
     <>
-    <Routing/>
+    <div className='bg-gray-100 min-h-screen'>
+     <Routing/>
+    </div>
     </>
   )
 }
