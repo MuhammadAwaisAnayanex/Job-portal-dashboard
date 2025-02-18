@@ -1,64 +1,58 @@
-import React from "react";
-import { Link,} from "react-router-dom";
-import siteLogo from "../../assets/site-logo.jpg"
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import siteLogo from "../../assets/site-logo.jpg";
+
 const Header = () => {
+  const [theme, setTheme] = useState("light-theme");
+  const [isThemeMode, setIsThemeMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const changeThemeMode = () => {
+    if (theme === "dark-theme") {
+      setTheme("light-theme");
+      setIsThemeMode(true);
+    } else {
+      setTheme("dark-theme");
+      setIsThemeMode(false);
+    }
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-6 flex justify-between items-center flex-wrap ">
+    <header className="">
+      <div className="container mx-auto px-6 flex justify-between items-center py-4">
         {/* Logo */}
         <div className="flex items-center">
-          <Link to={"/"}><img src={siteLogo} alt="JobPortal Logo" className="h-15"/></Link>
+          <Link to={"/"}>
+            <img src={siteLogo} alt="JobPortal Logo" className="h-10" />
+          </Link>
         </div>
+
+        {/* Hamburger Icon */}
+        <button 
+          className="md:hidden text-2xl focus:outline-none" 
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✖" : "☰"}
+        </button>
 
         {/* Navigation Links */}
-        <nav className=" md:flex space-x-8">
-          <Link to={"/"} className="text-gray-700 hover:text-blue-500">
-            Dashboard
-          </Link>
-          <Link to={"/post-job"} className="text-gray-700 hover:text-blue-500">
-            Post a Job
-          </Link>
+        <nav
+          className={`md:flex md:gap-5 absolute md:static top-16 left-0 w-full md:w-auto  md:flex-row flex-col items-center md:items-center p-4 md:p-0 transition-all ${menuOpen ? "flex" : "hidden"}`}
+        >
+          <Link to={"/"} className="block py-2 md:py-0">Dashboard</Link>
+          <Link to={"/post-job"} className="block py-2 md:py-0">Post a Job</Link>
+          <Link to={"/login"} className="block py-2 md:py-0">Login</Link>
+          <Link to={"/signUp"} className="block py-2 md:py-0">Sign Up</Link>
         </nav>
 
-        {/* User Profile Dropdown */}
-        <div className="flex items-center space-x-4 ">
-          <Link to={"/login"} className="text-gray-700 hover:text-blue-500">Login</Link>
-          <Link to={"/signUp"} className="text-gray-700 hover:text-blue-500">
-            Sign Up
-          </Link>
-
-          {/* Dropdown Menu */}
-          <div className="relative">
-            <button className="flex items-center focus:outline-none">
-              <img
-                src="https://placehold.co/40x40?text=User"
-                alt="User"
-                className="h-10 w-10 rounded-full"
-              />
-            </button>
-            {/* Dropdown Content */}
-            <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden">
-              <a
-                href="/profile"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >
-                Profile
-              </a>
-              <a
-                href="/settings"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >
-                Settings
-              </a>
-              <a
-                href="/logout"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >
-                Logout
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* Dark and Light Mode */}
+        <button className="cursor-pointer ml-4" onClick={changeThemeMode}>
+          {isThemeMode ? "☀️" : "🌙"}
+        </button>
       </div>
     </header>
   );

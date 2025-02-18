@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const SignUp = () => {
   return (
     <>
-          <div className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="bg-white p-8 rounded-lg shadow-md w-96">
+          <div className="min-h-screen flex items-center justify-center">
+        <div className="p-8 rounded-lg  w-96 auth-page">
           <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
           <form>
           <div className="mb-4">
@@ -27,7 +27,7 @@ const SignUp = () => {
             <div className="mb-3">
                 <span>Have an account already?<Link to={"/login"} className="underline text-blue-600">Login in here! </Link></span>
             </div>
-            <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+            <button type="submit" className="w-full p-2 rounded hover:cursor-pointer">
               SignUp
             </button>
           </form>

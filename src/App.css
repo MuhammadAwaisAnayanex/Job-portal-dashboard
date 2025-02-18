@@ -1,0 +1,105 @@
+.dark-theme{
+    background-color: #000;
+    color: #fff;
+}
+.light-theme{
+    background-color: #fff;
+    color: #000;
+}
+.dark-theme header{
+    background-color: #000;
+    color: #fff;
+}
+.light-theme header{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+} 
+.dark-theme header {
+    box-shadow: rgb(195 195 201 / 20%) 0px 7px 29px 0px;
+}
+
+.dark-theme .job-card{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+}
+.dark-theme .job-card a{
+    background-color: #000;
+    color: #fff;
+}
+.dark-theme .filter-btn{
+    background-color: #fff;
+    color: #000;
+}
+.dark-theme input::placeholder{
+    color: #fff;
+}
+
+.light-theme .job-card{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+}
+.light-theme .job-card a{
+    background-color: #fff;
+    color: #000;
+}
+.light-theme .filter-btn{
+    background-color: #000;
+    color: #fff;
+}
+
+header a:hover{
+    color: #58c3ba;
+}
+
+.dark-theme .auth-page{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+}
+.dark-theme .auth-page input::placeholder{
+    color: #000;
+}
+.dark-theme .auth-page button{
+    background-color: #000;
+    color: #fff;
+}
+.light-theme .auth-page{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #000;
+    border-radius: 10px;
+    color: #fff;
+}
+.light-theme .auth-page input::placeholder{
+    color: #fff;
+}
+.light-theme .auth-page button{
+    background-color: #fff;
+    color: #000;
+}
+.dark-theme .post-job-btn{
+    background-color: #fff;
+    color: #000;
+}
+.light-theme .post-job-btn{
+    background-color: #000;
+    color: #fff;
+}
+.dark-theme nav{
+
+}
+@media screen and (max-width: 768px) {
+    .light-theme nav{
+        background-color: #000;
+        color: #fff;
+    }
+    .dark-theme nav{
+        background-color: #fff;
+        color: #000;
+    }
+  }
+
+

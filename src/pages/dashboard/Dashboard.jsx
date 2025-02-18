@@ -48,6 +48,14 @@ const Dashboard = () => {
     applyFilters();
   };
 
+  // Reset filters
+  const resetFilters = () => {
+    setLocationFilter('');
+    setJobTypeFilter('');
+    setSalaryFilter('');
+    setFilteredJobs(postJobData);
+  };
+
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">Job Listings</h1>
@@ -58,37 +66,41 @@ const Dashboard = () => {
           <input
             type="text"
             placeholder="Filter by Location"
-            className="p-2 border rounded"
+            className="p-2 border rounded w-[100%] sm:w-[30%] md:w-[auto]"
             value={locationFilter}
             onChange={(e) => setLocationFilter(e.target.value)}
           />
           <input
             type="text"
             placeholder="Filter by Job Type"
-            className="p-2 border rounded"
+            className="p-2 border rounded w-[100%] sm:w-[30%] md:w-[auto]"
             value={jobTypeFilter}
             onChange={(e) => setJobTypeFilter(e.target.value)}
           />
           <input
             type="text"
             placeholder="Filter by Salary"
-            className="p-2 border rounded"
+            className="p-2 border rounded w-[100%] sm:w-[30%] md:w-[auto]"
             value={salaryFilter}
             onChange={(e) => setSalaryFilter(e.target.value)}
           />
           <button
             onClick={handleFilterChange}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 hover:cursor-pointer"
-          >
+            className="px-4 py-2 rounded cursor-pointer filter-btn w-[100%] sm:w-[30%] md:w-[auto]">
             Apply Filters
+          </button>
+          <button
+            onClick={resetFilters}
+            className="px-4 py-2 rounded filter-btn cursor-pointer w-[100%] sm:w-[30%] md:w-[auto]">
+            Reset Filters
           </button>
         </div>
       </div>
 
       {
         !filteredJobs.length ? <>
-          {/* if job post length is Empity */}
-          <div className="bg-red-100 text-red-700 border-red-400 rounded-md"><h1 className="text-center py-2">Job Post is Empity!</h1></div>
+          {/* if job post length is Empty */}
+          <div className="bg-red-100 text-red-700 border-red-400 rounded-md"><h1 className="text-center py-2">Job Post is Empty!</h1></div>
         </>:<>
         
           {/* if add job Post */}
